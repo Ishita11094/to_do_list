@@ -1,0 +1,6 @@
+{% extends base %}
+{% block title %} Forgot password {% endblock %}
+
+{% block content %}
+<h1>Forgot Password??</h1>
+{% endblock%}

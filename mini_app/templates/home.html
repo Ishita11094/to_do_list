@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+<h1 style="color:black;"> Your To do list </h1>
+<h1 style="color:black;"> Welcome {{ user.username }} </h1>
+
+<style>
+	.b1 { width:15%; }
+</style>
+
+{% load static %}
+
+<br><br>
+<img src="{% static 'images/to_do.jpeg' %}" alt="Flowers in Chania" width="1000" height="600">
+
+{% endblock %}

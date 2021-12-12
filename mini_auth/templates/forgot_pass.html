@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} Forgot password {% endblock %}
+
+{% block content %}
+
+<style>
+	.create-task-btn{
+		border-radius: 10px;
+		font-size: 1.0rem;
+		height: 60px;
+		width: 240px;
+		box-shadow: inset 0 2px 0 0 #FF1493;
+		background: #FAFAD2;
+	}
+	.create-task-btn:hover{
+		background: #FF69B4;
+	}
+	.create-task-btn:active{
+		background: #FF1493;
+		border-color: #FF00FF;
+	}
+</style>
+
+<h1 style="color:black">Forgot Password??</h1>
+<form method="POST">
+{% csrf_token %}
+<input type = "text" name="un" placeholder="enter username" required>
+<br><br>
+<input type = "email" name="em" placeholder="enter email" required>
+<br><br>
+<button type="submit" name="button" class="create-task-btn">Reset Password</button>
+</form>
+
+{{ msg }}
+{% endblock%}

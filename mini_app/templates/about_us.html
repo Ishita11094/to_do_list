@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %} About Us {% endblock %}
+
+{% block content %}
+
+<style>
+	table,th,td{ border:1px solid black; border-collapse: collapse; color:black; }
+	.styled-table {
+    		border-collapse: collapse;
+    		margin: 25px 0;
+    		font-size: 0.9em;
+    		font-family: sans-serif;
+    		min-width: 400px;
+    		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	}
+
+	.styled-table thead tr {
+    		background-color: #009879;
+    		color: #ffffff;
+    		text-align: left;
+	}
+
+	.styled-table th,
+	.styled-table td {
+    		padding: 12px 15px;
+	}
+
+	.styled-table tbody tr {
+    		border-bottom: 1px solid #dddddd;
+	}
+
+	.styled-table tbody tr:nth-of-type(even) {
+    		background-color: #f3f3f3;
+	}
+
+	.styled-table tbody tr:last-of-type {
+    		border-bottom: 2px solid #009879;
+	}
+
+	.styled-table tbody tr.active-row {
+    		font-weight: bold;
+    		color: #009879;
+	}
+</style>
+
+<h1 style="color:black"> About us </h1>
+<table class="styled-table" style="width:75%">
+<tr>
+	<th> Name </th>
+	<th> Email </th>
+	<th> Contact no </th>
+</tr>
+
+<tr>
+	<td><center> Ishita Sharma </center></td>
+	<td><center> ishita11094@gmail.com </center></td>
+	<td><center> 9322344974 </center></td>
+</tr>
+</table>
+
+<br><br>
+<h2 style="font-family:verdana;">Hello!! I am Ishita Sharma. I am currently pursueing Computer Engineering from Shah & Anchor Kutchhi Engineering College. I am very passionate about coding.</h2>
+{% endblock %}
+

@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+
+<head>
+	<title> {% block title %} {% endblock %} </title>
+	<style>
+		*{ font-size:30px; }
+		#nav { height:130px; width:100%; background-color:black;}
+		#nav a { color: white; text-decoration:none; padding:30px }
+		h1 { font-size: 40px; color:white; text-align:center ;}
+		body { background-color:#ffd8d8; }
+		#footer {position:relative;bottom:0;width:100%;height:300px;background:black;}
+	</style>
+
+</head>
+
+<body background="{% static 'images\backg.png' %}">
+<center>
+	<div id="nav">
+	{% if user.is_authenticated %}
+		<br>	
+		
+
+		<img align="left" src="{% static 'images/homework.png' %}" alt="icon" height="60px" width="60px" style="margin: 10px 20px 20px 10px;">
+		<a href="{% url 'home' %}" style= "text-align:right; text-decoration:none; color:white" > Home </a>	
+		<a href="{% url 'weather' %}"> Temperature </a>
+		<a href="{% url 'to_do' %}"> To Do List </a>
+		<a href="{% url 'about_us' %}" style= "text-align:left;"> About Us </a>
+		<a href="{% url 'user_logout' %}"> Logout </a>
+		
+
+	{% else %}
+		<h1 font-size: 80px; style="color:white;"> Temperature & To Do App</h1>
+	{% endif %}
+			
+	</div>
+	{% block content %} {% endblock %}
+
+	<br><br><br><br><br><br><br>
+	
+	<div id="footer">
+		<h1 style="color:white; text-align:center">Temperature & To Do App</h1>		
+		<h2 style="color:white; text-align:left">Developer: Ishita Sharma</h2>
+		<h2 style="color:white; font-size: 30px;text-align:left;float:left;">Contact us on :</h2>
+		<a href="https://www.instagram.com/"><input type="image" align=left src="{% static 'images/insta.png' %}" width="50" height="50" style="padding:30px"> </a>
+		<a href="https://www.facebook.com/"><input type="image" align=left src="{% static 'images/facebook.png' %}" width="50" height="50" style="padding:30px"> </a>
+		<a href="https://twitter.com/?lang=en"><input type="image" align=left src="{% static 'images/twitter.png' %}" width="50" height="50" style="padding:30px"> </a>
+		<br><br><br>	
+	</div>	
+</center>
+</body>
+</html>

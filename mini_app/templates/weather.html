@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Weather {% endblock %}
+
+{% block content %}
+<style>
+	*{ font-size:30px }
+	
+</style>
+
+<script>
+		function validate()
+		{
+			var c = document.getElementById("city")
+			
+			if(c.value=="")
+			{
+				alert("City name cannot be empty");
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+	</script>
+
+<h1 style="color:black">Weather App<h1>
+
+<link rel="stylesheet" href="{%static 'css/search.css'%}">
+
+<form onsubmit="return validate()">
+<div id="cover">
+  <form method="get" action="">
+    <div class="tb">
+      <div class="td"><input type="text" name="city" placeholder="Search" id="city" autocomplete="off" required></div>
+      <div class="td" id="s-cover">
+        <button type="submit">
+          <div id="s-circle"></div>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</form>
+
+<center>
+<br><br><br><br><br><br>
+
+<h1 style="color:black"> Temperature: </h1>
+<h1 style="color:black"> {{ msg.temp }} </h1>
+<h3 style="color:black"> {{ msg.desc }} </h3>
+<img src="http://openweathermap.org/img/w/{{ msg.icon }}.png">
+
+
+</center>
+{% endblock %}

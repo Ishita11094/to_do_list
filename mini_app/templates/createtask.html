@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Create Task {% endblock %}
+
+{% block content %}
+<center>
+	<link rel="stylesheet" href="{%static 'css/create-task-btn.css'%}">
+	<h1 style="color:black"> Create your tasks here </h1>
+	<form method="POST", autocomplete="off">
+	{% csrf_token %}
+	<table border="2">
+		{{ fm.as_table }}
+	</table>
+	<br><br><br>
+	<button type="submit" name="button" class="create-task-btn">Save task</button>
+	</form>
+	{{ msg }} 
+	<br><br><br><br>
+</center>
+{% endblock %}
+<br><br><br><br>

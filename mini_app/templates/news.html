@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} News {% endblock %}
+
+{% block content %}
+
+<style>
+	*{ font-size:30px; }
+</style>
+
+	<h2>News from The Hindu</h2>
+	<br><br>
+	{% for m in msg %}
+		<h2> 
+			<ul>
+				<li>{{ m.title }}</li>
+			</ul>
+		</h2>
+		<a url href="{{ m.url }}">Read More</a>
+		<br>
+		<img src="{{ m.urlToImage }} width="200" height="300" "></img>
+		<br><br><br><br>
+	{% endfor %}
+
+{% endblock %}
