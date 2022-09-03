@@ -23,9 +23,9 @@ def weather(request):
 		if request.GET.get("city"):
 			try:
 				city=request.GET.get("city")
-				a1="http://api.openweathermap.org/data/2.5/weather?units=metric"
-				a2="&q=" + city
-				a3="&appid="+"c6e315d09197cec231495138183954bd"
+				a1=" "
+				a2=" " + city
+				a3=" "
 				wa=a1+a2+a3
 				res=requests.get(wa)
 				data=res.json()
@@ -47,9 +47,9 @@ def weather(request):
 def news(request):
 	src = "the-hindu"
 	try:
-		a1 = "https://newsapi.org/v2/top-headlines"
-		a2 = "?sources=" + src
-		a3 = "&apiKey=" + "dcf42dec7d614e778d3dcd8616ab8182"
+		a1 = " "
+		a2 = " " + src
+		a3 = " "
 		wa = a1 + a2 + a3
 		res = requests.get(wa)
 		data = res.json()
